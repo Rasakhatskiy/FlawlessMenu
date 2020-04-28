@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="INCLUDE\FlawlessMenu.hpp" />
+    <ClInclude Include="lib\FlawlessMenu.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CPP\FlawlessMenu.cpp" />
+    <ClCompile Include="lib\FlawlessMenu.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

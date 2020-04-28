@@ -1,4 +1,4 @@
-#include "..//INCLUDE/FlawlessMenu.hpp"
+#include "FlawlessMenu.hpp"
 
 namespace FlawlessMenu
 {
