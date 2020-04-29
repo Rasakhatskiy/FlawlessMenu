@@ -127,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\FlawlessMenu.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="example.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

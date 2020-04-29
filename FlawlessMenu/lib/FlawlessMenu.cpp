@@ -2,11 +2,15 @@
 
 namespace FlawlessMenu
 {
+
+	std::string Menu::Selector = "";
+	std::string Menu::Filler = "";
+	int(*Menu::GetKeyFunc)(void) = nullptr;
+
 	Menu::Menu(std::string title)
 	{
 		Title = title;
 		Cursor = 0;
-		Selector = "-->";
 		Type = Menu::MenuType::Submenu;
 		Children.push_back(new Menu("Exit", MenuType::Exit));
 	}
@@ -15,7 +19,6 @@ namespace FlawlessMenu
 	{
 		Cursor = 0;
 		Function = nullptr;
-		Selector = "-->";
 		Title = title;
 		Item = title;
 		Type = type;
@@ -26,7 +29,7 @@ namespace FlawlessMenu
 	{
 		system("CLS");
 
-		std::cout << "==========" + Title + "==========" << std::endl;
+		std::cout << Filler + Title + Filler << std::endl;
 		for (unsigned i = 0; i < Children.size(); ++i)
 		{
 			if (Cursor == i)	std::cout << Selector;
@@ -38,8 +41,8 @@ namespace FlawlessMenu
 
 	Menu::Button Menu::GetButton()
 	{
-		auto key = _getch();
-		if (key == 0x00 || key == 0xE0) key = _getch();
+		auto key = GetKeyFunc();
+		if (key == 0x00 || key == 0xE0) key = GetKeyFunc();
 
 		switch (key)
 		{
