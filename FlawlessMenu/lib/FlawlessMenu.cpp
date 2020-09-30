@@ -1,10 +1,15 @@
 #include "FlawlessMenu.hpp"
 
+/*! Flawless menu namespace*/
 namespace FlawlessMenu
 {
-
+	/*! Static selector for all menus.*/
 	std::string Menu::Selector = "";
+
+	/*! Static filler for all menus.*/
 	std::string Menu::Filler = "";
+
+
 	int(*Menu::GetKeyFunc)(void) = nullptr;
 
 	Menu::Menu(std::string title)
